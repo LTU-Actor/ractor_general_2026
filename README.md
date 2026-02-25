@@ -7,6 +7,7 @@ Description of the project. talk about IGVC, our car, years won, a bit of everyt
 ```bash
 sudo apt install ros-jazzy-desktop      # Install ROS2. Check [documentation](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html) for any problems
 mkdir rACTOR2026                        # Create a parent folder named rACTOR2026
+cd rACTOR2026                           # Enter the parent folder
 python3 -m venv .venv                   # Create a virtual environment
 source .venv/bin/activate               # Activate the virtual environment
 pip install -r requirements.txt         # Install dependencies
