@@ -13,8 +13,10 @@ source .venv/bin/activate               # Activate the virtual environment
 pip install -r requirements.txt         # Install dependencies
 source /opt/ros/jazzy/setup.bash        # Source the ROS2 environment
         # If you have vcstool installed
-        git clone https://github.com/LTU-Actor/rACTOR2026
-        vcs import src < <Folder_name.repos>    #Import the repositories needed (Check below for the folder structure)
+        git clone https://github.com/LTU-Actor/ractor-general-2026
+        vcs import < <Folder_name.repos>    #Import the repositories needed (Check below for the folder structure)
+        # If you don't
+        git clone https://github.com/LTU-Actor/<Folder_name.repos>
 ```
 
 ## Repos organization
