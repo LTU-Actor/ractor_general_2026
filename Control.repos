@@ -1,9 +1,0 @@
-repositories:
-  Control/control_tower_ros2:
-    type: git
-    url: https://github.com/LTU-Actor/control_tower_ros2
-    version: master
-  Control/ibus_reader:
-    type: git
-    url: https://github.com/LTU-Actor/ibus_reader
-    version: master
