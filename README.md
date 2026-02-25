@@ -4,7 +4,7 @@ This folder is simply a tool to help devs install and code for the IGVC 2026 pro
 Description of the project. talk about IGVC, our car, years won, a bit of everything idk
 
 ## Setup
-'''bash
+```bash
 sudo apt install ros-jazzy-desktop      # Install ROS2. Check [documentation](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html) for any problems
 mkdir rACTOR2026                        # Create a parent folder named rACTOR2026
 python3 -m venv .venv                   # Create a virtual environment
@@ -14,10 +14,10 @@ source /opt/ros/jazzy/setup.bash        # Source the ROS2 environment
         # If you have vcstool installed
         git clone https://github.com/LTU-Actor/rACTOR2026
         vcs import src < <Folder_name.repos>    #Import the repositories needed (Check below for the folder structure)
-'''
+```
 
 ## Repos organization
-'''txt
+```txt
 rACTOR2026/
 │
 ├── Control/
@@ -59,4 +59,4 @@ rACTOR2026/
     ├── [rACTOr_pi_launches](Misc/rACTOr_pi_launches/)
     │
     └── [schoolbus_description](Misc/schoolbus_description/)
-'''# rACTOR2026
+``` rACTOR2026
