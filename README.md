@@ -6,8 +6,8 @@ Description of the project. talk about IGVC, our car, years won, a bit of everyt
 ## Setup
 ```bash
 sudo apt install ros-jazzy-desktop      # Install ROS2. Check [documentation](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html) for any problems
-mkdir rACTOR2026                        # Create a parent folder named rACTOR2026
-cd rACTOR2026                           # Enter the parent folder
+mkdir rACTOr2026                        # Create a parent folder named rACTOR2026
+cd rACTOr2026                           # Enter the parent folder
 python3 -m venv .venv                   # Create a virtual environment
 source .venv/bin/activate               # Activate the virtual environment
 pip install -r requirements.txt         # Install dependencies
@@ -16,20 +16,22 @@ source /opt/ros/jazzy/setup.bash        # Source the ROS2 environment
         git clone https://github.com/LTU-Actor/ractor-general-2026
         vcs import < <Folder_name.repos>    #Import the repositories needed (Check below for the folder structure)
         # If you don't
-        git clone https://github.com/LTU-Actor/<Folder_name.repos>
+        mkdir <Folder_name>
+        cd <Folder_name>
+        git clone https://github.com/LTU-Actor/<repo_name>
 ```
 
 ## Repos organization
 ```txt
-rACTOR2026/
+rACTOr2026/
 │
-├── Control/
+├── control/
 │   │
 │   ├── control_tower_ros2/
 │   │
 │   └── ibus_reader/
 │
-├── Driving/
+├── driving/
 │   │
 │   ├── mqtt_wheel_bridge/
 │   │
@@ -37,7 +39,7 @@ rACTOR2026/
 │   │
 │   └── schoolbus_odrive_config/
 │
-├── Vision/
+├── vision/
 │   │
 │   ├── blob_follow_ros2/
 │   │
@@ -55,11 +57,13 @@ rACTOR2026/
 │   │
 │   └── usbcam_simple_ros2/
 │
-└── Misc/
-    │
-    ├── IGVC-WT32ETH01/
-    │
-    ├── rACTOr_pi_launches/
-    │
-    └── schoolbus_description/
+├── misc/
+│   │
+│   ├── IGVC-WT32ETH01/
+│   │
+│   ├── rACTOr_pi_launches/
+│   │
+│   └── schoolbus_description/
+│
+└── ractor_general_2026/
 ```
