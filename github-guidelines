@@ -1,0 +1,181 @@
+# LTU-Actor GitHub Guidelines
+
+## Core Rules
+
+1. **Do not push directly to `main`**.
+
+2. **All changes go through a Pull Request (PR)**.
+
+3. **`main` should stay in a working state** (at minimum: builds/runs for the team’s current setup).
+
+4. **Keep PRs small and focused** for easier review and fewer conflicts.
+
+## 1. Branch Workflow
+
+### Create a branch from the latest main:
+
+```bash
+git checkout main
+git pull origin main
+git checkout -b feature/123-short-description
+```
+
+### Push your branch:
+
+```bash
+git push -u origin feature/123-short-description
+```
+
+### Branch Naming Convention
+
+* Use lowercase + hyphens.
+
+* Include an issue number when possible.
+
+* **Patterns:**
+
+  * `feature/<issue#>-<short-description>`
+
+  * `bugfix/<issue#>-<short-description>`
+
+  * `chore/<issue#>-<short-description>`
+
+  * `docs/<issue#>-<short-description>`
+
+  * `experiment/<short-description>`
+
+* **Examples:** `feature/42-lane-detection-tuning`, `bugfix/57-fix-null-cmd-vel`, `docs/12-update-setup-notes`.
+
+## 2. Commit Guidelines (Best Effort)
+
+### Recommended Format
+
+`<type>: <short summary>`
+
+### Common types:
+
+* `feat`: new feature
+
+* `fix`: bug fix
+
+* `docs`: documentation
+
+* `refactor`: internal restructure
+
+* `test`: tests
+
+* `chore`: tooling or repo tasks
+
+**Examples:**
+
+* `feat: add teleop safety stop`
+
+* `fix: prevent crash when topic missing`
+
+* `docs: add quickstart notes`
+
+### Commit Workflow
+
+```bash
+git status
+git add .
+git commit -m "feat: add teleop safety stop"
+git push
+```
+
+## 3. Keeping Your Branch Up to Date
+
+### Option A (Recommended: Rebase)
+
+```bash
+git fetch origin
+git rebase origin/main
+git push --force-with-lease
+```
+
+### Option B (Merge)
+
+```bash
+git fetch origin
+git merge origin/main
+git push
+```
+
+## 4. Pull Requests
+
+### When to open a PR
+
+Open a PR when work is complete.
+
+### PR Title Style
+
+* `feat: ...`
+
+* `fix: ...`
+
+* `docs: ...`
+
+### PR Description Requirements
+
+* What changed
+
+* Why it changed
+
+* How to sanity check
+
+* Link issues (e.g., `Closes #123`)
+
+## 5. Approvals and Merging to main
+
+### Approval Rules
+
+* At least **1 approval** from someone who did not author the PR.
+
+* For major or safety-related robot changes, aim for **2 approvals**.
+
+### Merge Method
+
+Use **Squash and Merge**.
+
+* Keeps `main` history clean.
+
+* Each PR becomes one clear change.
+
+### After Merge Cleanup
+
+```bash
+git checkout main
+git pull origin main
+```
+
+**Optional cleanup:**
+
+```bash
+git branch -d <branch-name>
+git push origin --delete <branch-name>
+```
+
+## 6. What Not To Do
+
+* **Do not commit build artifacts** (e.g., ROS2 `build/`, `install/`, `log/`).
+
+* **Do not mix unrelated changes** in one PR.
+
+* **Remove unnecessary debug prints** before merging.
+
+## Recommended GitHub Settings
+
+| Setting | Requirement | 
+| ----- | ----- | 
+| **Branch protection for `main`** | Require Pull Request before merging | 
+| **Approvals** | Require at least 1 approval | 
+| **Push Restrictions** | Restrict direct pushes to `main` | 
+| **Merge Strategy** | Allow squash merging | 
+
+### Team Roles
+
+* **1–2 Repo Maintainers** (or rotating Integration Lead).
+
+* Anyone can open PRs.
+
+* Maintainers ensure rules are followed and merge PRs.
